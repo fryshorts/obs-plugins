@@ -98,7 +98,7 @@ void QtText::tick(float seconds)
 		false);
 	gs_leavecontext();
 
-	updated = true;
+	updated = false;
 }
 
 void QtText::render(effect_t effect)
