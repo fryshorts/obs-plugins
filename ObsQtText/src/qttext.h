@@ -15,6 +15,7 @@ public:
 	~QtText();
 
 	void update(obs_data_t settings);
+	static obs_properties_t properties();
 	void tick(float seconds);
 	void render(effect_t effect);
 
@@ -28,6 +29,9 @@ private:
 private slots:
 
 private:
-	QImage *img;
+	bool updated;
+	QString text;
+	QString fontName;
+
 	texture_t tex;
 };

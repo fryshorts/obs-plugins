@@ -27,6 +27,11 @@ static void qttext_update(void *data, obs_data_t settings)
 	reinterpret_cast<QtText *>(data)->update(settings);
 }
 
+static obs_properties_t qttext_properties()
+{
+	return QtText::properties();
+}
+
 static void qttext_tick(void *data, float seconds)
 {
 	reinterpret_cast<QtText *>(data)->tick(seconds);
@@ -65,6 +70,7 @@ bool obs_module_load(uint32_t libobs_ver)
 	qttext.create       = qttext_create;
 	qttext.destroy      = qttext_destroy;
 	qttext.update       = qttext_update;
+	qttext.properties   = qttext_properties;
 	qttext.video_tick   = qttext_tick;
 	qttext.video_render = qttext_render;
 	qttext.getwidth     = qttext_getwidth;
